@@ -1,0 +1,37 @@
+<nav id="nav-main" class="navbar fixed-top navbar-toggleable-md navbar-inverse" data-gumshoe-header>
+  <div class="navbar-brand">
+    <a href="#home"></a>
+    <img src="static/images/xl/ci/logo.png" class="" alt="">
+    <span class="">{{ site.title }}</span>
+  </div>
+
+  <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav {% comment %}mr-auto{% endcomment %}" data-gumshoe>
+      {% comment %}
+      <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+      <a class="hidden" href="#page-top"></a>
+      {% endcomment %}
+
+      {% for entry in site.data.navigation.main %}
+        <li class="nav-item">
+          <a class="nav-link {% if forloop.first %}active{% endif %}" 
+            href="{{ entry.url }}">
+            {{ entry.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% comment %}<form class="form-inline my-2 my-lg-0">{% endcomment %}
+      {% comment %}<input class="form-control mr-sm-2" type="text" placeholder="Search">{% endcomment %}
+      {% comment %}<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>{% endcomment %}
+    {% comment %}</form>{% endcomment %}
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <button class="navbar-toggler {% comment %}navbar-toggler-right{% endcomment %}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+    {% comment %}<span class="navbar-toggler-icon"></span>{% endcomment %}
+  </button>
+</nav>

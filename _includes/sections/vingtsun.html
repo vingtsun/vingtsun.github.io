@@ -1,0 +1,30 @@
+<section id="{{ section.title | slugify }}" class="content-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">{{ section.title }}</div>
+      {% if section.subtitle %}
+      <div class="subtitle">{{ section.subtitle }}</div>
+      {% endif %}
+    </div>
+    <div class="section-body">
+      <div class="content">
+      {{ section.content }}
+      </div>
+      <div class="prominent slogan">
+      {{ section.prueVerzicht }}
+      </div>
+      <div class="photos galeriephotos">
+        {% include galeriephotos.html %}
+      </div>
+      <div class="mehr-auf-flickr">
+        <div class="icon flickr" title="Fotos auf Flickr">
+          <a href="https://www.flickr.com/photos/vingtsunaustria/albums/"></a>
+          <i class="fa fa-flickr"></i>
+        </div>
+        <div class="mehr">
+          Mehr Fotos auf <a href="https://www.flickr.com/photos/vingtsunaustria/albums/">flickr</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

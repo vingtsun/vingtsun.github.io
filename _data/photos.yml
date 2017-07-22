@@ -1,0 +1,27 @@
+galerie:
+  - src: "https://farm5.staticflickr.com/4270/35573856996_c15dbacc4a_n.jpg"
+    alt: "Gruppenfoto vor Schule"
+
+  - src: "https://farm5.staticflickr.com/4198/34771631284_e4586c9ea0_n.jpg" 
+    alt: "Trainingsraum"
+
+  - src: "https://farm5.staticflickr.com/4043/34815962813_b31b2596a1_n.jpg"
+    alt: "Wong und Dietmar vor Palmenhaus"
+
+  - src: "https://farm5.staticflickr.com/4005/34783248304_9c70f569a2_n.jpg"
+    alt: "Philipp vor Schule"
+
+  - src: "static/images/xxs/dc/dietmar_knives.jpg"
+    alt: "Dietmar Messer gegen Stock"
+    bgpos: "center top"
+
+  - src: "static/images/xxs/wsl/wong_under_yip.jpg"
+    alt: "Wong Sitting"
+    bgpos: "center bottom"
+
+  #- src: "https://farm5.staticflickr.com/4060/35584775216_9ab7106507_n.jpg"
+    #alt: "Philipp und Branko"
+
+  #- src: "https://farm5.staticflickr.com/4096/34783248784_0ed40c6eb9_n.jpg"
+    #alt: "Wong slapping"
+

@@ -1,0 +1,74 @@
+<section id="{{ section.title | slugify }}" class="content-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">{{ section.title }}</div>
+      {% if section.subtitle %}
+      <div class="subtitle">{{ section.subtitle }}</div>
+      {% endif %}
+    </div>
+    {{ section.content }}
+
+    {% comment %}
+    <ul class="article-list list-unstyled">
+      {% for article in site.articles %}
+        <li class="card">
+          <div class="card-block">
+            <h2 class="card-title">
+              <a class="post-link" href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>
+            </h2>
+            {% if article.author %}<p class="card-text">von <i>{{ article.author }}</i></p>{% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endcomment %}
+
+    <div class="section-body articles">
+      {% for article in site.articles %}
+      <figure id="article-{{ article.title | slugify }}" class="article card collapsed">
+        {% comment %}<img class="card-img-top hidden-md-up" src="static/images/{{ article.image | strip }}">{% endcomment %}
+        {% comment %}<div class="card-img-top hidden-sm-down" style="background-image: url(static/images/{{ article.image | strip }})"></div>{% endcomment %}
+        <div class="card-block">
+          <div class="card-title">{{ article.title }}</div>
+          {% if article.author %}<p class="card-text">von <i>{{ article.author }}</i></p>{% endif %}
+          <div class="top toggle">
+            <i class="up fa fa-caret-up"></i>
+          </div>
+          <div id="" class="collapsible article">
+            {{ article.content | markdownify }}
+          </div>
+          <div class="bottom toggle hidden-md-up">
+            <i class="down fa fa-caret-down"></i>
+            <i class="up fa fa-caret-up"></i>
+          </div>
+          <div class="bottom openmodal hidden-sm-down" data-toggle="modal" data-target="#modal-{{ article.title | slugify }}">
+            <button class="btn btn-primary">
+            {% comment %}<button class="btn btn-secondary">{% endcomment %}
+              <i class="fa fa-clone"></i>
+            </button>
+          </div>
+        </div>
+      </figure>
+
+      <div id="modal-{{ article.title | slugify }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{ article.title }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalTitle-{{ article.title | slugify }}">{{ article.title }}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {{ article.content | markdownify }}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<footer id="footer" class="navbar navbar-inverse site-footer">
+  {% comment %}
+  <div class="navbar-brand">
+    <a href="#home"></a>
+    <img src="static/images/ci/logo.png" class="" alt="">
+    <span class="">{{ site.title }}</span>
+  </div>
+  {% endcomment %}
+
+  <div class="left">
+    <div class="icon phone" title="Anrufen...">
+      <a href="tel:{{ site.phone | remove: " " }}" target="_blank"></a>
+      <i class="fa fa-phone-square"></i>
+    </div><!--
+    --><div class="icon mail" title="Schreiben...">
+      <a href="mailto:{{ site.email }}"></a>
+      <i class="fa fa-envelope-o"></i>
+    </div><!--
+    --><div class="icon impressum" title="Impressum" type="button" data-toggle="collapse" data-target="#impressum">
+      <i class="fa fa-info"></i>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="icon flickr" title="Fotos auf Flickr">
+      <a href="https://www.flickr.com/photos/vingtsunaustria/"></a>
+      <i class="fa fa-flickr"></i>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+{% include navigation.html %}
+
+{% assign sections = site.sections | sort: 'order' %}
+{% for section in sections %}
+  {% if section.active == 0 %}
+    {% comment %}{% break %}{% endcomment %}
+    {% continue %}
+  {% endif %}
+  {% if section.include != null %}
+    {% include {{ section.include }} %}
+  {% else %}
+    {% include sections/default.html %}
+  {% endif %}
+{% endfor %}
+
+{% include footer.html %}
+{% include impressum.html %}

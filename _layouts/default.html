@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html lang="{{ site.htmllang|default:"de-at" }}" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="{{ site.htmllang|default:"de-at" }}" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="{{ site.htmllang|default:"de-at" }}" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="{{ site.htmllang|default:"de-at" }}" class="no-js"> 
+<!--<![endif]-->
+
+  {% include head.html %}
+
+  <body id="page-top" data-spy="scroll" data-target="#navbarSupportedContent" data-offset="0">
+    <div class="background"></div>
+
+    {{ content }}
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4/lodash.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tether@1.4/dist/js/tether.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0-alpha.6/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2/jquery.backstretch.js"></script>
+
+    <script src="static/libraries.js"></script>  
+    <script src="static/bundle.js"></script>
+    <script>
+      require('src/js/initialize').init();
+    </script> <!--for brunch-->
+
+  </body>
+
+</html>

@@ -1,0 +1,21 @@
+<section id="{{ section.title | slugify }}" class="content-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">{{ section.title }}</div>
+      {% if section.subtitle %}
+      <div class="subtitle">{{ section.subtitle }}</div>
+      {% endif %}
+    </div>
+    <div class="section-body">
+      {{ section.content }}
+      {% assign schulen = site.schulen | sort: 'order' %}
+      {% for schule in schulen %}
+        {% if schule.include != null %}
+          {% include {{ schule.include }} %}
+        {% else %}
+          {% include schulen/default.html %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

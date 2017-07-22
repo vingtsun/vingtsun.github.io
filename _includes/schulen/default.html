@@ -1,0 +1,97 @@
+{% comment %}<section id="{% if schule.title %}schule-{{ schule.title | slugify }}{% endif %}" {% endcomment %}
+<figure id="{% if schule.title %}schule-{{ schule.title | slugify }}{% endif %}" 
+        class="schule card">
+  <h1 class="card-title">{{ schule.title }}</h1>
+  <div class="card-block">
+    <div class="info">
+      {% if schule.website %}
+      <div class="website">
+        <i class="fa fa-firefox"></i><!--
+        --><a href="http://{{ schule.website }}">{{ schule.website }}</a>
+      </div>
+      {% endif %}
+      {% if schule.phone %}
+      <div class="phone">
+        <i class="fa fa-phone-square"></i><a href="tel:{{ schule.phone | remove: " " }}">{{ schule.phone }}</a>
+      </div>
+      {% endif %}
+      {% if schule.email %}
+      <div class="mail">
+        <i class="fa fa-envelope-o"></i><a href="mailto:{{ schule.email }}">{{ schule.email }}</a>
+      </div>
+      {% endif %}
+      {% if schule.address_line1 %}
+      <div class="address-block">
+        <i class="fa fa-address-card-o"></i>
+        <div class="address" style="display:inline-block">
+          <span class="addressline1">{{ schule.address_line1 }}</span>
+          {% if schule.address_line2 %}
+          <br /><span class="addressline2">{{ schule.address_line2 }}</span>
+          {% endif %}
+          {% if schule.address_line3 %}
+          <br /><span class="addressline3">{{ schule.address_line3 }}</span>
+          {% endif %}
+        </div>
+        {% if schule.map %}
+        <div class="btn btn-primary map-icon" role="button" type="button" data-toggle="collapse" data-target="#map-{{ schule.title | slugify }}" aria-expanded="false" aria-controls="collapseMap-{{ schule.title | slugify }}">
+        {% comment %}<button class="map-icon" type="button" data-toggle="collapse" data-target="#map-{{ schule.title | slugify }}" aria-expanded="false" aria-controls="collapseMap-{{ schule.title | slugify }}">{% endcomment %}
+          <i class="fa fa-map-marker fa-2x"></i>
+        </button>
+        {% comment %}</div>{% endcomment %}
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+    {% if schule.map %}
+    <div id="map-{{ schule.title | slugify }}" class="map collapse">
+      <img class="" src="static/images/sm/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--ALL displays-->
+      {% comment %}<img class="hidden-sm-up" src="static/images/xs/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--XS displays-->{% endcomment %}
+      {% comment %}<img class="hidden-xs-down hidden-md-up" src="static/images/sm/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--SM displays-->{% endcomment %}
+      {% comment %}<img class="hidden-md-up" src="static/images/xs/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--XS SM displays-->{% endcomment %}
+
+      {% comment %}<img class="hidden-sm-down hidden-lg-up" src="static/images/md/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--MD displays-->{% endcomment %}
+      {% comment %}<img class="hidden-md-down hidden-xl-up" src="static/images/lg/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--LG displays-->{% endcomment %}
+      {% comment %}<img class="hidden-lg-down" src="static/images/xl/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--XL displays-->{% endcomment %}
+      {% comment %}<img class="hidden-sm-down" src="static/images/sm/{{ schule.map | replace: '.png', '.jpg' }}"/> <!--MD LG XL displays-->{% endcomment %}
+    </div>
+    {% endif %}
+    <div class="personen">
+      <div class="card person schulleiter">
+        <div class="portrait card-img-top">
+          {% if schule.schulleiter_image %}
+            <img class="" src="static/images/xxs/{{ schule.schulleiter_image }}">
+            {% comment %}<img class="hidden-md-up" src="static/images/sm/{{ schule.schulleiter_image }}">{% endcomment %}
+            {% comment %}<img class="hidden-sm-down" src="static/images/md/{{ schule.schulleiter_image }}">{% endcomment %}
+          {% else %}
+            <img src="static/images/xxs/other/default-avatar.png">
+          {% endif %}
+        </div>
+        <div class="card-block">
+          <p class="title">{{ schule.schulleiter_title }}</p>
+          <h3 class="name {% comment %}card-title{% endcomment %}">{{ schule.schulleiter }}</h3>
+        </div>
+      </div>
+      {% if schule.assistent1 %}
+      <div class="card person">
+        <div class="portrait card-img-top">
+          {% if schule.assistent1_image %}
+            <img class="" src="static/images/xxs/{{ schule.assistent1_image }}" >
+            {% comment %}<img class="hidden-md-up" src="static/images/sm/{{ schule.assistent1_image }}" >{% endcomment %}
+            {% comment %}<img class="hidden-sm-down" src="static/images/md/{{ schule.assistent1_image }}" >{% endcomment %}
+          {% else %}
+            <img src="static/images/xxs/other/default-avatar.png">
+          {% endif %}
+        </div>
+        <div class="card-block">
+          <p class="title">{{ schule.assistent1_title }}</p>
+          <h3 class="name">{{ schule.assistent1 }}</h3>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    {{ schule.content }}
+  </div>
+{% comment %}</section>{% endcomment %}
+</figure>
+

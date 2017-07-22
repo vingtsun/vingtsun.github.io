@@ -1,0 +1,89 @@
+<section id="{{ section.title | slugify }}" class="content-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="title">{{ section.title }}</div>
+      {% if section.subtitle %}
+      <div class="subtitle">{{ section.subtitle }}</div>
+      {% endif %}
+    </div>
+    <div class="section-body">
+      {{ section.content }}
+
+      <div class="biographies-only">
+        {% capture name-yipman %} {{ site.data.biographies.yipman.name }}{% endcapture %}
+        {% capture image-yipman %} {{ site.data.biographies.yipman.image }}{% endcapture %}
+        {% capture title-yipman %} {{ site.data.biographies.yipman.title }}{% endcapture %}
+        {% capture bio-yipman %} {{ site.data.biographies.yipman.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-yipman image=image-yipman title=title-yipman bio=bio-yipman %}
+
+        {% capture name-wsl %} {{ site.data.biographies.wsl.name }}{% endcapture %}
+        {% capture image-wsl %} {{ site.data.biographies.wsl.image }}{% endcapture %}
+        {% capture title-wsl %} {{ site.data.biographies.wsl.title }}{% endcapture %}
+        {% capture bio-wsl %} {{ site.data.biographies.wsl.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-wsl image=image-wsl title=title-wsl bio=bio-wsl %}
+
+        {% capture name-phb %} {{ site.data.biographies.phb.name }}{% endcapture %}
+        {% capture image-phb %} {{ site.data.biographies.phb.image }}{% endcapture %}
+        {% capture title-phb %} {{ site.data.biographies.phb.title }}{% endcapture %}
+        {% capture bio-phb %} {{ site.data.biographies.phb.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-phb image=image-phb title=title-phb bio=bio-phb %}
+
+        {% capture name-dietmar %} {{ site.data.biographies.dietmar.name }}{% endcapture %}
+        {% capture image-dietmar %} {{ site.data.biographies.dietmar.image }}{% endcapture %}
+        {% capture title-dietmar %} {{ site.data.biographies.dietmar.title }}{% endcapture %}
+        {% capture bio-dietmar %} {{ site.data.biographies.dietmar.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-dietmar image=image-dietmar title=title-dietmar bio=bio-dietmar %}
+      </div>
+      <div class="biographies-and-text">
+        <p>Ving Tsun ist ein chinesisches Kampfsystem, das vor etwa 300 Jahren entwickelt wurde.</p>
+
+        {% capture name-yipman %} {{ site.data.biographies.yipman.name }}{% endcapture %}
+        {% capture image-yipman %} {{ site.data.biographies.yipman.image }}{% endcapture %}
+        {% capture title-yipman %} {{ site.data.biographies.yipman.title }}{% endcapture %}
+        {% capture bio-yipman %} {{ site.data.biographies.yipman.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-yipman image=image-yipman title=title-yipman bio=bio-yipman %}
+
+        <p>Nach mehreren Generationen brachte Großmeister Yip Man das System nach Hongkong und öffnete es damit der westlichen Welt. Zu seinen Schülern gehörten der berühmte Bruce Lee und der legendäre Wong Shun Leung.</p>
+
+        {% capture name-wsl %} {{ site.data.biographies.wsl.name }}{% endcapture %}
+        {% capture image-wsl %} {{ site.data.biographies.wsl.image }}{% endcapture %}
+        {% capture title-wsl %} {{ site.data.biographies.wsl.title }}{% endcapture %}
+        {% capture bio-wsl %} {{ site.data.biographies.wsl.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-wsl image=image-wsl title=title-wsl bio=bio-wsl %}
+
+        <p>Wong Shun Leung war der berühmteste Kämpfer des Ving Tsun Systems, der auch maßgeblich an der kämpferischen Ausbildung von Bruce Lee beteiligt war.</p>
+
+        {% capture name-phb %} {{ site.data.biographies.phb.name }}{% endcapture %}
+        {% capture image-phb %} {{ site.data.biographies.phb.image }}{% endcapture %}
+        {% capture title-phb %} {{ site.data.biographies.phb.title }}{% endcapture %}
+        {% capture bio-phb %} {{ site.data.biographies.phb.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-phb image=image-phb title=title-phb bio=bio-phb %}
+
+        <p>1983 nahm Philipp Bayer sein Studium unter Wong Shun Leung in Hongkong auf und gründete 1990 die Ving Tsun Kung Fu Association Europe.</p>
+
+        {% capture name-dietmar %} {{ site.data.biographies.dietmar.name }}{% endcapture %}
+        {% capture image-dietmar %} {{ site.data.biographies.dietmar.image }}{% endcapture %}
+        {% capture title-dietmar %} {{ site.data.biographies.dietmar.title }}{% endcapture %}
+        {% capture bio-dietmar %} {{ site.data.biographies.dietmar.bio }}{% endcapture %}
+        {% include biographies/default.html name=name-dietmar image=image-dietmar title=title-dietmar bio=bio-dietmar %}
+
+        <p>In Österreich vertritt Dietmar Christl dieses Ving Tsun System. Gefunden hat Dietmar diesen Weg durch die äußerst produktive Bekanntschaft mit seinem Lehrer Philipp Bayer, welchen er 1982 kennen lernte und dessen Energie und kritisch-analytischen Geist er sehr zu schätzen wusste.</p>
+      </div>
+      {% comment %}
+      <div class="biographies-textonly">
+        <p>Ving Tsun ist ein chinesisches Kampfsystem, das vor etwa 300 Jahren entwickelt wurde.</p>
+        <p>Nach mehreren Generationen brachte Großmeister Yip Man das System nach Hongkong und öffnete es damit der westlichen Welt. Zu seinen Schülern gehörten der berühmte Bruce Lee und der legendäre Wong Shun Leung.</p>
+        <p>Wong Shun Leung war der berühmteste Kämpfer des Ving Tsun Systems, der auch maßgeblich an der kämpferischen Ausbildung von Bruce Lee beteiligt war.</p>
+        <p>1983 nahm Philipp Bayer sein Studium unter Wong Shun Leung in Hongkong auf und gründete 1990 die Ving Tsun Kung Fu Association Europe.</p>
+        <p>In Österreich vertritt Dietmar Christl dieses Ving Tsun System. Gefunden hat Dietmar diesen Weg durch die äußerst produktive Bekanntschaft mit seinem Lehrer Philipp Bayer, welchen er 1982 kennen lernte und dessen Energie und kritisch-analytischen Geist er sehr zu schätzen wusste.</p>
+      </div>
+      {% endcomment %}
+      <div class="biography-modals">
+        {% include biographies/modal.html name=name-yipman image=image-yipman title=title-yipman bio=bio-yipman %}
+        {% include biographies/modal.html name=name-wsl image=image-wsl title=title-wsl bio=bio-wsl %}
+        {% include biographies/modal.html name=name-phb image=image-phb title=title-phb bio=bio-phb %}
+        {% include biographies/modal.html name=name-dietmar image=image-dietmar title=title-dietmar bio=bio-dietmar %}
+      </div>
+    </div>
+  </div> <!-- container -->
+</section>

@@ -1,0 +1,44 @@
+<figure id="fig-{{ include.name | slugify }}" class="card collapsed biography">
+  <img class="card-img-top hidden-md-up" src="static/images/xxs/{{ include.image | strip }}">
+  <div class="card-img-top hidden-sm-down" style="background-image: url(static/images/xxs/{{ include.image | strip }})"></div>
+  <div class="card-block">
+    <div class="card-title">{{ include.name }}</div>
+    <div class="top toggle">
+      <i class="up fa fa-caret-up"></i>
+    </div>
+    <div id="" class="biography">
+      {{ include.bio | markdownify }}
+    </div>
+    <div class="bottom toggle hidden-md-up">
+      <i class="down fa fa-caret-down"></i>
+      <i class="up fa fa-caret-up"></i>
+    </div>
+    <div class="bottom openmodal hidden-sm-down" data-toggle="modal" data-target="#modal-{{ include.name | slugify }}">
+      <button class="btn btn-primary">
+      {% comment %}<button class="btn btn-secondary">{% endcomment %}
+        <i class="fa fa-clone"></i>
+      </button>
+    </div>
+  </div>
+</figure>
+
+{% comment %}
+<div id="modal-{{ include.name | slugify }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="{{ include.title }}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle-{{ include.name | slugify }}">{{ include.title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{ include.bio | markdownify }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcomment %}

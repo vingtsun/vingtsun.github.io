@@ -1,0 +1,16 @@
+main: 
+  - title: Home
+    url: '#home'
+  - title: Ving Tsun
+    url: '#ving-tsun'
+  - title: Stammbaum
+    url:   '#stammbaum'
+  #- title: Galerie
+    #url:   '#galerie'
+  - title: Artikel
+    url:   '#artikel'
+  - title: Seminare
+    url:   '#seminare'
+  - title: Schulen
+    url:   '#schulen'
+

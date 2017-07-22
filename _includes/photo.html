@@ -1,0 +1,32 @@
+{% comment %}
+Parameters:
+  classes - css classes
+  href - where the link points to
+  src - src of the image
+  alt - alt text
+  bgpos - background-position
+  width
+  height
+{% endcomment %}
+
+{% assign default_src="https://upload.wikimedia.org/wikipedia/commons/2/21/Solid_black.svg" %}
+
+<div class="photo {{ include.classes }}">
+  <a 
+    href="{{ include.href | default: "https://www.flickr.com/photos/vingtsunaustria/albums/" }}"
+    {% comment %}title="{{ include.alt }}"{% endcomment %}
+    style="background-image: url({{ include.src | default: default_src }});
+      background-position: {{ include.bgpos | default: "center" }};" 
+  >
+    <img 
+      src="{{ include.src | default: default_src }}"
+      alt="{{ include.alt }}"
+      {% if include.width %}
+      width="{{ include.width }}" 
+      {% endif %}
+      {% if include.height %}
+      height="{{ include.height }}"
+      {% endif %}
+    >
+  </a>
+</div>

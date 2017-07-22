@@ -1,0 +1,4 @@
+{% for photo in site.data.photos.galerie %}
+  {% include photo.html src=photo.src alt=photo.alt bgpos=photo.bgpos %}
+{% endfor %}
+
